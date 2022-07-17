@@ -1,0 +1,153 @@
+$ ./portal.out
+Enter one of the below Commands/Events
+REGISTER_CAB 0
+REGISTER_CAB 0
+REGISTER_CAB 1
+REGISTER_CAB 1
+STATUS
+
+Citywise Stationary Cabs:
+City: 0
+Cab: 0 Status: Available
+Cab: 1 Status: Available
+
+City: 1
+Cab: 2 Status: Available
+Cab: 3 Status: Available
+
+
+Cities Ordered By Demand (CityId:Numbookings): 
+1:0 0:0 
+
+BOOK_CAB 0 1
+Cab: 0 booked from City 0 to City 1
+STATUS
+
+Citywise Stationary Cabs:
+City: 0
+Cab: 1 Status: Available
+
+City: 1
+Cab: 2 Status: Available
+Cab: 3 Status: Available
+
+In Transit Cabs:
+Cab: 0 From City: 0 to City: 1
+
+Cities Ordered By Demand (CityId:Numbookings): 
+0:1 1:0 
+
+BOOK_CAB 0 1
+Cab: 1 booked from City 0 to City 1
+STATUS
+
+Citywise Stationary Cabs:
+City: 1
+Cab: 2 Status: Available
+Cab: 3 Status: Available
+
+In Transit Cabs:
+Cab: 0 From City: 0 to City: 1
+Cab: 1 From City: 0 to City: 1
+
+Cities Ordered By Demand (CityId:Numbookings): 
+0:2 1:0 
+
+TRIP_COMPLETED 0 1
+STATUS
+
+Citywise Stationary Cabs:
+City: 1
+Cab: 2 Status: Available
+Cab: 3 Status: Available
+Cab: 0 Status: Resting
+
+In Transit Cabs:
+Cab: 1 From City: 0 to City: 1
+
+Cities Ordered By Demand (CityId:Numbookings): 
+0:2 1:0 
+
+CHANGE_CITY 2 0
+STATUS
+
+Citywise Stationary Cabs:
+City: 0
+Cab: 2 Status: Available
+
+City: 1
+Cab: 3 Status: Available
+Cab: 0 Status: Resting
+
+In Transit Cabs:
+Cab: 1 From City: 0 to City: 1
+
+Cities Ordered By Demand (CityId:Numbookings): 
+0:2 1:0 
+
+REGISTER_CITY 2
+STATUS
+
+Citywise Stationary Cabs:
+City: 0
+Cab: 2 Status: Available
+
+City: 1
+Cab: 3 Status: Available
+Cab: 0 Status: Resting
+
+In Transit Cabs:
+Cab: 1 From City: 0 to City: 1
+
+Cities Ordered By Demand (CityId:Numbookings): 
+0:2 1:0 2:0 
+
+REGISTER_CITY 4
+STATUS
+
+Citywise Stationary Cabs:
+City: 0
+Cab: 2 Status: Available
+
+City: 1
+Cab: 3 Status: Available
+Cab: 0 Status: Resting
+
+In Transit Cabs:
+Cab: 1 From City: 0 to City: 1
+
+Cities Ordered By Demand (CityId:Numbookings): 
+0:2 4:0 2:0 1:0 
+
+BOOK_CAB 0 4
+Cab: 2 booked from City 0 to City 4
+STATUS
+
+Citywise Stationary Cabs:
+City: 1
+Cab: 3 Status: Available
+Cab: 0 Status: Resting
+
+In Transit Cabs:
+Cab: 1 From City: 0 to City: 1
+Cab: 2 From City: 0 to City: 4
+
+Cities Ordered By Demand (CityId:Numbookings): 
+0:3 1:0 2:0 4:0 
+
+TRIP_COMPLETED 2 4
+STATUS
+
+Citywise Stationary Cabs:
+City: 1
+Cab: 3 Status: Available
+Cab: 0 Status: Resting
+
+City: 4
+Cab: 2 Status: Resting
+
+In Transit Cabs:
+Cab: 1 From City: 0 to City: 1
+
+Cities Ordered By Demand (CityId:Numbookings): 
+0:3 4:0 2:0 1:0 
